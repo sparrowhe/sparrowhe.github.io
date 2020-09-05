@@ -3,9 +3,9 @@ function loadMd(url) {
         url: url,
         success: function (res) {
             console.log(res);
-            var converter = new Showdown.converter();
+            var converter = new showdown.Converter();
             $("#card").html(converter.makeHtml(res));
-            $('p code').each(function(i, e) {hljs.highlightBlock(e)});
+            $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
         }
     })
 }

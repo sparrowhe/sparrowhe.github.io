@@ -6,8 +6,8 @@
 
 > 改革开放
 
-```
-print("ok")  
+```python
+print("ok1")
 print("no")
 ```
 
