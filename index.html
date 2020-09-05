@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>SparrowHe - Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css" />
+    <link href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/github.min.css" rel="stylesheet">
+    <link href="static/css/markdown.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>hljs.initHighlighting.called = false;hljs.initHighlighting();</script>
+</head>
+
+<body class="mdui-drawer-body-left">
+    <div class="mdui-toolbar mdui-color-theme">
+        <a href="javascript:toggleBar();" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <span class="mdui-typo-title">SparrowHe - Blog</span>
+    </div>
+    <div class="mdui-drawer" id="drawer">
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+                <div class="mdui-list-item-content" onclick="javascript:location.reload();">Home</div>
+            </li>
+
+            <li class="mdui-collapse-item mdui-collapse-item-open">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">map</i>
+                    <div class="mdui-list-item-content">文章</div>
+                    <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense" id="notes">
+                    <!-- <li class="mdui-list-item mdui-ripple" onclick="showList('ZB');closeBar()">ZBXX</li> -->
+                </ul>
+            </li>
+    </div>
+    <div class="mdui-card mdui-center" style="width: 90%" id="card-main">
+        <div style="margin-left: 50px;" id="card">
+            <br>
+            <div class="mdui-typo-display-2">SparrowHe</div>
+            <br>
+            <div class="mdui-typo-body1">Hi, 我是SparrowHe，生于这个世纪，即将死于这个世纪</div>
+            <br>
+            <div class="mdui-typo-body1">思想江化，整天膜蛤</div>
+            <br>
+            <div class="mdui-typo-body1">文章在左边，记录我的一些日常生活</div>
+            <br>
+        </div>
+    </div>
+    <!-- js include -->
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/showdown/0.0.1/showdown.js"></script>
+    <script src="https://cdn.bootcss.com/highlight.js/9.18.1/highlight.min.js"></script>
+    <script src="static/js/util/loadPostList.js"></script>
+    <script src="static/js/util/loadMd.js"></script>
+    <script src="static/js/index.js"></script>
+</body>
+
+</html>
