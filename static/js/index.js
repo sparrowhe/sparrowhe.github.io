@@ -21,7 +21,7 @@ function postCallback(res) {
     $("#notes").html("");
     console.log(res);
     for (i in res) {
-        var html = `<li class="mdui-list-item mdui-ripple" onclick="javascript:window.location.href=window.location+'?postId=${res[i].id}'">${res[i].title}</li>`
+        var html = `<li class="mdui-list-item mdui-ripple" onclick="javascript:window.location.href=window.location.href.split('?')[0]+'?postId=${res[i].id}'">${res[i].title}</li>`
         $("#notes").html($("#notes").html() + html);
     }
 }

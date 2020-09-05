@@ -3,14 +3,16 @@ function loadMd(url, name) {
         url: url,
         success: function (res) {
             document.title = `${name} - ${blogOnwer}`
-            console.log(res);
             var converter = new showdown.Converter({
                 extensions: ['table']
             });
             $("#card").html(converter.makeHtml(res));
+            /*
             $('pre code').each(function (i, e) {
                 hljs.highlightBlock(e);
             });
+            */
+            hljs.initHighlighting();
             var card = document.getElementById("card");
             MathJax.Hub.Queue(["Typeset", MathJax.Hub, card]);
         }

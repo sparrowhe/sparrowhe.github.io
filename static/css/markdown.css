@@ -2,3 +2,19 @@ blockquote {
     border-left: #eee solid 3px;
     padding-left: 20px;
 }
+
+p > code {
+    background-color: #eee;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+a:visited {
+    color: #1756a9;
+}
+a {
+    color: #2a7ae2;
+    text-decoration: none;
+}
