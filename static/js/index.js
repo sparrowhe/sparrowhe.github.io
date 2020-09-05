@@ -1,6 +1,6 @@
 var inst = new mdui.Drawer('#drawer');
 
-const apiUrl = "http://127.0.0.1:1956/test";
+const apiUrl = "test";
 
 const blogName = "Blog";
 
