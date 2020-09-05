@@ -1,7 +1,8 @@
-function loadMd(url) {
+function loadMd(url,name) {
     $.ajax({
         url: url,
         success: function (res) {
+            document.title = `${name} - ${blogOnwer}`
             console.log(res);
             var converter = new showdown.Converter();
             $("#card").html(converter.makeHtml(res));

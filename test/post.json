@@ -2,8 +2,4 @@
     "id": 0,
     "title": "Hello, World",
     "markdown": "post/hello-world.md"
-},{
-    "id": 1,
-    "title": "Hello, Blog",
-    "markdown": "post/hello-blog.md"
 }]
