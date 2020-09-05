@@ -5,7 +5,11 @@ function loadMd(url) {
             console.log(res);
             var converter = new showdown.Converter();
             $("#card").html(converter.makeHtml(res));
-            $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+            $('pre code').each(function (i, e) {
+                hljs.highlightBlock(e);
+            });
+            var card = document.getElementById("card");
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub,card]);
         }
     })
 }
