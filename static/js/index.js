@@ -10,6 +10,7 @@ document.onload = loadPostList();
 document.title = `${blogName} - ${blogOnwer}`
 
 if (getQueryVariable("postId")) {
+    $("#card").html("<h1>Loading...</h1>");
     loadFromId(getQueryVariable("postId"));
 }
 
@@ -19,7 +20,6 @@ function toggleBar() {
 
 function postCallback(res) {
     $("#notes").html("");
-    console.log(res);
     for (i in res) {
         var html = `<li class="mdui-list-item mdui-ripple" onclick="javascript:window.location.href=window.location.href.split('?')[0]+'?postId=${res[i].id}'">${res[i].title}</li>`
         $("#notes").html($("#notes").html() + html);
