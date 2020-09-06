@@ -6,7 +6,7 @@ function loadMd(url, name) {
             var converter = new showdown.Converter({
                 extensions: ['table','strikethrough']
             });
-            $("#card").html(converter.makeHtml(res));
+            app.markdownHtml = converter.makeHtml(res);
             /*
             $('pre code').each(function (i, e) {
                 hljs.highlightBlock(e);
@@ -26,7 +26,7 @@ function loadFromId(id) {
             if (res[id]) {
                 loadMd(res[id]["markdown"], res[id]["title"]);
             } else {
-                $("#card").html("<h1>404 Not Found</h1>");
+                app.markdownHtml = "<h1>404 Not Found</h1>";
             }
         }
     })

@@ -40,20 +40,13 @@
                     <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
                 </div>
                 <ul class="mdui-collapse-item-body mdui-list mdui-list-dense" id="notes">
+                    <li class="mdui-list-item mdui-ripple" :onclick="post.postUrl" v-for="post in posts">{{ post.title }}</li>
                 </ul>
             </li>
     </div>
     <div class="mdui-card mdui-center" style="width: 90%; margin-bottom: 30px" id="card-main">
-        <div style="margin-left: 50px; max-width: 90%;" id="card">
-            <br>
-            <div class="mdui-typo-display-2">SparrowHe</div>
-            <br>
-            <div class="mdui-typo-body1">Hi, 我是SparrowHe，生于这个世纪，即将死于这个世纪</div>
-            <br>
-            <div class="mdui-typo-body1">思想江化，整天膜蛤</div>
-            <br>
-            <div class="mdui-typo-body1">文章在左边，记录我的一些日常生活</div>
-            <br>
+        <div style="margin-left: 50px; max-width: 90%;" id="card" v-html="markdownHtml">
+            {{ markdownHtml }}
         </div>
     </div>
     <div class="mdui-typo-caption-opacity mdui-text-center">CC BY-NC-SA 4.0 by SparrowHe</div>
@@ -61,6 +54,7 @@
     <!-- js include -->
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/showdown/1.9.1/showdown.js"></script>
     <script src="static/js/table/showdown-table.js"></script>
     <script src="static/js/util/strikethrough.js"></script>

@@ -6,11 +6,29 @@ const blogName = "Blog";
 
 const blogOnwer = "SparrowHe";
 
+var  markdownHtml = `<br><div class="mdui-typo-display-2">SparrowHe</div><br><div class="mdui-typo-body1">Hi, 我是SparrowHe，生于这个世纪，即将死于这个世纪</div><br><div class="mdui-typo-body1">思想江化，整天膜蛤</div><br><div class="mdui-typo-body1">文章在左边，记录我的一些日常生活</div><br>`;
+
+var notes = []
+
+var app = new Vue({
+    el: "#card",
+    data: {
+        markdownHtml: markdownHtml 
+    }
+});
+
+var sideBar = new Vue({
+    el: "#notes",
+    data: {
+        posts: notes
+    }
+});
+
 document.onload = loadPostList();
 document.title = `${blogName} - ${blogOnwer}`
 
 if (getQueryVariable("postId")) {
-    $("#card").html("<h1>Loading...</h1>");
+    app.markdownHtml = "<h1>Loading...</h1>";
     loadFromId(getQueryVariable("postId"));
 }
 
@@ -38,10 +56,11 @@ function toggleBar() {
 }
 
 function postCallback(res) {
-    $("#notes").html("");
-    for (i in res) {
-        var html = `<li class="mdui-list-item mdui-ripple" onclick="javascript:window.location.href=window.location.href.split('?')[0]+'?postId=${res[i].id}'">${res[i].title}</li>`
-        $("#notes").html($("#notes").html() + html);
+    for(i in res) {
+        sideBar.posts.push({
+            title: res[i].title,
+            postUrl: "javasctipt:window.location.href='"+window.location.href.split("?")[0]+`?postId=${res[i].id}'`
+        })
     }
 }
 
