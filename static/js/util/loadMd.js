@@ -2,7 +2,8 @@ function loadMd(url, name) {
     $.ajax({
         url: url,
         success: function (res) {
-            document.title = `${name} - ${blogOnwer}`
+            document.title = `${name} - ${blogOwner}`
+            app.name = `${app.name} - ${name}`
             var converter = new showdown.Converter({
                 extensions: ['table','strikethrough']
             });

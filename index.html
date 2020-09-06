@@ -21,36 +21,40 @@
 </head>
 
 <body class="mdui-drawer-body-left">
-    <div class="mdui-toolbar mdui-color-theme">
-        <a href="javascript:toggleBar();" class="mdui-btn mdui-btn-icon"><i
-                class="mdui-icon material-icons">menu</i></a>
-        <span class="mdui-typo-title">SparrowHe - Blog</span>
-    </div>
-    <div class="mdui-drawer" id="drawer">
-        <ul class="mdui-list" mdui-collapse="{accordion: true}">
-            <li class="mdui-list-item mdui-ripple">
-                <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
-                <div class="mdui-list-item-content" onclick="javascript:window.location.href='/'">Home</div>
-            </li>
-
-            <li class="mdui-collapse-item mdui-collapse-item-open">
-                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-                    <i class="mdui-list-item-icon mdui-icon material-icons">map</i>
-                    <div class="mdui-list-item-content">文章</div>
-                    <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-                </div>
-                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense" id="notes">
-                    <li class="mdui-list-item mdui-ripple" :onclick="post.postUrl" v-for="post in posts">{{ post.title }}</li>
-                </ul>
-            </li>
-    </div>
-    <div class="mdui-card mdui-center" style="width: 90%; margin-bottom: 30px" id="card-main">
-        <div style="margin-left: 50px; max-width: 90%;" id="card" v-html="markdownHtml">
-            {{ markdownHtml }}
+    <div id="app">
+        <div class="mdui-toolbar mdui-color-theme">
+            <a href="javascript:toggleBar();" class="mdui-btn mdui-btn-icon"><i
+                    class="mdui-icon material-icons">menu</i></a>
+            <span class="mdui-typo-title">{{ owner }} - {{ name }}</span>
         </div>
+        <div class="mdui-drawer" id="drawer" :style="sideStyle">
+            <ul class="mdui-list" mdui-collapse="{accordion: true}">
+                <li class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+                    <div class="mdui-list-item-content" onclick="javascript:window.location.href='/'">Home</div>
+                </li>
+
+                <li class="mdui-collapse-item mdui-collapse-item-open">
+                    <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                        <i class="mdui-list-item-icon mdui-icon material-icons">map</i>
+                        <div class="mdui-list-item-content">文章</div>
+                        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+                    </div>
+                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense" id="notes">
+                        <li class="mdui-list-item mdui-ripple" :onclick="post.postUrl" v-for="post in posts">{{ post.title }}</li>
+                    </ul>
+                </li>
+        </div>
+        <div class="mdui-card mdui-center" style="width: 90%; margin-bottom: 30px" id="card-main">
+            <div style="margin-left: 50px; max-width: 90%;" id="card" v-html="markdownHtml">
+                {{ markdownHtml }}
+            </div>
+        </div>
+        <div class="mdui-typo-caption-opacity mdui-text-center" id="footer">{{ time }}</div>
+        <br>
+        <div class="mdui-typo-caption-opacity mdui-text-center">CC BY-NC-SA 4.0 by SparrowHe</div>
+        <br>
     </div>
-    <div class="mdui-typo-caption-opacity mdui-text-center">CC BY-NC-SA 4.0 by SparrowHe</div>
-    <br>
     <!-- js include -->
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
