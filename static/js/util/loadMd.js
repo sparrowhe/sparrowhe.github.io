@@ -4,7 +4,7 @@ function loadMd(url, name) {
         success: function (res) {
             document.title = `${name} - ${blogOnwer}`
             var converter = new showdown.Converter({
-                extensions: ['table']
+                extensions: ['table','strikethrough']
             });
             $("#card").html(converter.makeHtml(res));
             /*

@@ -14,6 +14,25 @@ if (getQueryVariable("postId")) {
     loadFromId(getQueryVariable("postId"));
 }
 
+if(getQueryVariable("rss")) {
+    var xml = `<?xml version="1.0" encoding="UTF-8" ?><rss version="2.0"><channel><title>${blogName} - ${blogOnwer}</title><link>http://sparrowhe.top</link><description>${blogOnwer}'s Blog</description>`;
+    $.ajax({
+        url: apiUrl+"/post.json",
+        success: function(res) {
+            for(i in res) {
+                xml += `<item>
+                <title>${res[i].title}</title>
+                <link>http://sparrowhe.top/?postId=${res[i].id}</link>
+                <description>${res[i].description}</description>
+              </item>`;
+            }
+            xml+=`</channel></rss>`;
+            document.write(xml);
+            console.log(xml);
+        }
+    })
+}
+
 function toggleBar() {
     inst.toggle();
 }
