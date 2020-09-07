@@ -18,4 +18,9 @@
     "title":"ZiboEFB开发记录",
     "markdown":"post/zibo-efb.md",
     "description":"Dev Log"
+},{
+    "id":4,
+    "title":"PMDG进离场数据编写教程",
+    "markdown":"post/PMDG-navdata-sidstar.md",
+    "description":"PMDG NavData SIDSTAR"
 }]
