@@ -24,6 +24,13 @@ var app = new Vue({
     }
 });
 
+Vue.directive('highlight',function (el) {
+    let blocks = el.querySelectorAll('pre code');
+    blocks.forEach((block)=>{
+      hljs.highlightBlock(block);
+    })
+  })
+
 document.onload = loadPostList();
 document.title = `${blogName} - ${blogOwner}`
 

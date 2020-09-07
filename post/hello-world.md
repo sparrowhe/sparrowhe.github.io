@@ -12,8 +12,11 @@
 - [x] LaTeX 实现  
 - [ ] 后端  
 
+测试见下
+
 ---
 
+Test:
 
 # Hello World
 
@@ -26,6 +29,15 @@
 ```python
 print("ok1")
 print("no")
+```
+
+```xml
+<note>
+    <to>George</to>
+    <from>John</from>
+    <heading>Reminder</heading>
+    <body>Don't forget the meeting!</body>
+</note>
 ```
 
 |  表头   | 表头  |
@@ -42,3 +54,4 @@ $$ (1+1+4+5+1+4)^{1919810} $$
 **加粗测试**
 
 *斜体*
+
