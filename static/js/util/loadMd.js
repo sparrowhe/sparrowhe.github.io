@@ -5,7 +5,7 @@ function loadMd(url, name) {
             document.title = `${name} - ${blogOwner}`
             app.name = `${app.name} - ${name}`
             var converter = new showdown.Converter({
-                extensions: ['table','strikethrough']
+                extensions: ['table','strikethrough','radiobox']
             });
             app.markdownHtml = converter.makeHtml(res);
             /*
