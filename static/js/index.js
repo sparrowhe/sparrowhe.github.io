@@ -20,6 +20,7 @@ var app = new Vue({
         markdownHtml: markdownHtml,
         posts: notes,
         sideStyle: "",
+        status: inst.getState()=='opened' ? true : false,
         time: '页面加载于 ' + new Date().toLocaleString()
     }
 });
@@ -59,11 +60,7 @@ if (getQueryVariable("rss")) {
 }
 
 function toggleBar() {
-    if (inst.getState() == "opened" || inst.getState() == "opening") {
-        app.sideStyle = "display:none";
-    } else {
-        app.sideStyle = "";
-    }
+    app.status = !app.status;
     inst.toggle();
 }
 

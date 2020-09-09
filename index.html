@@ -27,7 +27,7 @@
                     class="mdui-icon material-icons">menu</i></a>
             <span class="mdui-typo-title">{{ owner }} - {{ name }}</span>
         </div>
-        <div class="mdui-drawer" id="drawer" :style="sideStyle">
+        <div :class="status ? 'mdui-drawer mdui-drawer-open' : 'mdui-drawer mdui-drawer-close'" id="drawer" :style="sideStyle">
             <ul class="mdui-list" mdui-collapse="{accordion: true}">
                 <li class="mdui-list-item mdui-ripple">
                     <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
