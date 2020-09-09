@@ -5,7 +5,7 @@ function loadMd(url, name) {
             document.title = `${name} - ${blogOwner}`
             app.name = `${app.name} - ${name}`
             var converter = new showdown.Converter({
-                extensions: ['table','strikethrough','radiobox']
+                extensions: ['table', 'strikethrough', 'radiobox']
             });
             app.markdownHtml = converter.makeHtml(res);
             /*
@@ -24,11 +24,13 @@ function loadFromId(id) {
     $.ajax({
         url: apiUrl + "/post.json",
         success: function (res) {
-            if (res[id]) {
-                loadMd(res[id]["markdown"], res[id]["title"]);
-            } else {
-                app.markdownHtml = "<h1>404 Not Found</h1>";
+            for (i in res) {
+                if (res[i]["id"]==id) {
+                    loadMd(res[i]["markdown"], res[i]["title"]);
+                    break;
+                }
             }
+            app.markdownHtml = "<h1>404 Not Found</h1>";
         }
     })
 }

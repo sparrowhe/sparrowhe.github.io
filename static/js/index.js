@@ -69,10 +69,14 @@ function toggleBar() {
 
 function postCallback(res) {
     for (i in res) {
-        app.posts.push({
-            title: res[i].title,
-            postUrl: "javasctipt:window.location.href='" + window.location.href.split("?")[0] + `?postId=${res[i].id}'`
-        })
+        if (!res[i].hideInList){
+            app.posts.push({
+                title: res[i].title,
+                postUrl: "javasctipt:window.location.href='" + window.location.href.split("?")[0] + `?postId=${res[i].id}'`
+            });
+        } else {
+            continue;
+        }
     }
 }
 

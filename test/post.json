@@ -2,25 +2,36 @@
     "id": 0,
     "title": "Hello, World",
     "markdown": "post/hello-world.md",
-    "description": "测试文章"
+    "description": "测试文章",
+    "hideInList": false
 },{
     "id":1,
     "title":"赞赞小课堂学习笔记（1）",
     "markdown":"post/lucas-class.md",
-    "description": "一些关于管制的东西"
+    "description": "一些关于管制的东西",
+    "hideInList": false
 },{
     "id":2,
     "title":"一种高效的对线方法",
     "markdown":"post/ftf-somebody.md",
-    "description":"自创的一种对线方法"
+    "description":"自创的一种对线方法",
+    "hideInList": true
 },{
     "id":3,
     "title":"ZiboEFB开发记录",
     "markdown":"post/zibo-efb.md",
-    "description":"Dev Log"
+    "description":"Dev Log",
+    "hideInList": false
 },{
     "id":4,
     "title":"PMDG进离场数据编写教程",
     "markdown":"post/PMDG-navdata-sidstar.md",
-    "description":"PMDG NavData SIDSTAR"
-}]
+    "description":"PMDG NavData SIDSTAR",
+    "hideInList": false
+},{
+    "id": 99,
+    "title": "友链",
+    "markdown": "post/friend.md",
+    "hideInList": true
+}
+]
