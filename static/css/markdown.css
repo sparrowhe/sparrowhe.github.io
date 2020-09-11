@@ -31,6 +31,10 @@ a {
     background-color: transparent;
 }
 
+.btnsp {
+    color: #000 !important;
+}
+
 ::selection {
     background: #66ccff;
     color: #fff;

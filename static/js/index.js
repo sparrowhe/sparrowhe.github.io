@@ -1,5 +1,3 @@
-var inst = new mdui.Drawer('#drawer');
-
 const apiUrl = "test";
 
 const blogName = "Blog";
@@ -10,6 +8,7 @@ var markdownHtml = `<br><div class="mdui-typo-display-2">SparrowHe</div><br><div
 
 var notes = []
 
+var inst=new mdui.Drawer('#drawer');
 mdui.mutation();
 
 var app = new Vue({
@@ -20,17 +19,17 @@ var app = new Vue({
         markdownHtml: markdownHtml,
         posts: notes,
         sideStyle: "",
-        status: inst.getState()=='opened' ? true : false,
+        status: inst.getState() == 'opened' ? true : false,
         time: '页面加载于 ' + new Date().toLocaleString()
     }
 });
 
-Vue.directive('highlight',function (el) {
+Vue.directive('highlight', function (el) {
     let blocks = el.querySelectorAll('pre code');
-    blocks.forEach((block)=>{
-      hljs.highlightBlock(block);
+    blocks.forEach((block) => {
+        hljs.highlightBlock(block);
     })
-  })
+})
 
 document.onload = loadPostList();
 document.title = `${blogName} - ${blogOwner}`
@@ -60,8 +59,7 @@ if (getQueryVariable("rss")) {
 }
 
 function toggleBar() {
-    app.status = !app.status;
-    inst.toggle();
+    new mdui.Drawer('#drawer').toggle();
 }
 
 function postCallback(res) {
