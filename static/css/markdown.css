@@ -1,6 +1,11 @@
+body {
+    font-family: Roboto,Noto,Helvetica,Arial,sans-serif;
+}
+
 blockquote {
-    border-left: #eee solid 3px;
-    padding-left: 20px;
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    border-left: 5px solid #eee;
 }
 
 p > code {
@@ -11,10 +16,32 @@ p > code {
     border-radius: 5px;
 }
 
-a:visited {
-    color: #1756a9;
+pre > code {
+    border-radius: 5px;
+}
+
+a:hover {
+    color: #0056b3;
 }
 a {
-    color: #2a7ae2;
+    color: #3498db;
     text-decoration: none;
+}
+a {
+    background-color: transparent;
+}
+
+::selection {
+    background: #66ccff;
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #66ccff;
+    color: #fff;
+}
+
+::-webkit-selection {
+    background: #66ccff;
+    color: #fff;
 }
