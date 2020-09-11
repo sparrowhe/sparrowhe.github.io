@@ -65,26 +65,20 @@ function toggleBar() {
 }
 
 function postCallback(res) {
-    for (i in res) {
-        if (!res[i].hideInList){
+    _(res).forEach(element => {
+        if (!element.hideInList) {
             app.posts.push({
-                title: res[i].title,
-                postUrl: "javasctipt:window.location.href='" + window.location.href.split("?")[0] + `?postId=${res[i].id}'`
-            });
-        } else {
-            continue;
+                title: element.title,
+                postUrl: "javasctipt:window.location.href='" + window.location.href.split("?")[0] + `?postId=${element.id}'`
+            })
         }
-    }
+    });
 }
 
 function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i = 0; i < vars.length; i++) {
-        var pair = vars[i].split("=");
-        if (pair[0] == variable) {
-            return pair[1];
-        }
+    var vars = _.split(query, "&", 1);
+    if (_.split(vars[0], "=")[0] == variable) {
+        return _.split(vars[0], "=")[1];
     }
-    return (false);
 }

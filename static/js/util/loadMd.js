@@ -8,11 +8,6 @@ function loadMd(url, name) {
                 extensions: ['table', 'strikethrough', 'radiobox']
             });
             app.markdownHtml = converter.makeHtml(res);
-            /*
-            $('pre code').each(function (i, e) {
-                hljs.highlightBlock(e);
-            });
-            */
             hljs.initHighlighting();
             var card = document.getElementById("card");
             MathJax.Hub.Queue(["Typeset", MathJax.Hub, card]);
@@ -24,12 +19,11 @@ function loadFromId(id) {
     $.ajax({
         url: apiUrl + "/post.json",
         success: function (res) {
-            for (i in res) {
-                if (res[i]["id"]==id) {
-                    loadMd(res[i]["markdown"], res[i]["title"]);
-                    break;
+            _(res).forEach(element => {
+                if(element.id == id) {
+                    loadMd(element.markdown, element.title);
                 }
-            }
+            });
             app.markdownHtml = "<h1>404 Not Found</h1>";
         }
     })
